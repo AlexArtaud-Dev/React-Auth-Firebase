@@ -10,7 +10,6 @@ export default function Dashboard(){
 
     async function handleLogout(){
         setError('')
-
         try {
             await logout()
             history.push('/login')
@@ -31,6 +30,7 @@ export default function Dashboard(){
                     <strong>Email Verified : </strong> {JSON.stringify(currentUser.emailVerified)}<br/>
                     <strong>Phone Number : </strong> {JSON.stringify(currentUser.phoneNumber)}<br/>
                     <strong>Photo : </strong> {currentUser.photoURL && <p>{JSON.stringify(currentUser.photoURL)}</p>}
+
                     <Link to="/update-profile" className="btn btn-primary w-100 mt-3">Update Profile</Link>
                 </Card.Body>
            </Card>
